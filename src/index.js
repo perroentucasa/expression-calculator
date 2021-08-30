@@ -7,7 +7,7 @@ function expressionCalculator(expr) {
   expr = expr.replace(/ /g, ''); 
   if (expr.indexOf('/0') !== -1)
   
-    throw new Error('Can not divide by zero.');
+    throw new Error('TypeError: Division by zero.');
 
   
   let brackets = 0;
@@ -18,7 +18,7 @@ function expressionCalculator(expr) {
 
   if (brackets !== 0)
   
-    throw new Error('Brackets are not paired');
+    throw new Error('ExpressionError: Brackets must be paired');
 
   
   expr = new Function('return ' + expr);
